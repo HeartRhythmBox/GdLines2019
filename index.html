@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<title>EP related Guidelines Review '18 to mid '19</title>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+</script>
+
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins|Open+Sans+Condensed:700" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+<style>
+
+.darkGrey {background-color:#272727}
+.grey {color:#747474}
+.orange {color:#ff652f}
+.yellow {color: #ffe400}
+.green {color: #14a76c}
+
+.poppins {font-family: 'Poppins', sans-serif;}
+.openSans {font-family: 'Open Sans Condensed', sans-serif;}
+
+
+</style>
+<body>
+
+<!--front page-->
+<div class="darkGrey" style="height:100vh">
+    <div id="mainTitle" class="openSans w3-center" style="font-size: 6vmax;padding-top:20vh;color:white">
+        <span style="border-bottom: black solid 0.1vmax"> EP-related Guidelines Review </span>
+    </div>
+    <div class="w3-cell-row w3-center" id="ringRow" style="padding-top:5vh;" >
+        <div class="w3-col s4 m3 l2 w3-center openSans yellow ring" style="background:url(ringYellow.png);font-size:2vmax;background-size: 100%;background-repeat: no-repeat">
+            Bradycardia <br><span style="font-size:1.7vmax">& conduction abnormalities</span></div>
+        <div class="w3-col s4 m3 l2 w3-center openSans orange ring" style="background:url(ringOrange.png);background-size: 100%;background-repeat: no-repeat;
+        font-size:4vmax">AF</div>
+        <div class="w3-col s4 m3 l2 w3-center openSans green ring" style="background:url(ringGreen.png);background-size: 100%;background-repeat: no-repeat;
+        font-size:2vmax">Asymptomatic Arrhythmias</div>
+    </div>
+
+</div>
+
+
+
+
+
+
+<script>
+
+window.onscroll = function(){
+    menuReact();
+}
+
+window.onload = function(){
+    if (screen.width>993){
+    ringRow(2)} 
+    else if(screen.width>600) {ringRow(3)}
+    else {ringRow(4)}
+}
+
+function ringRow(n){
+    var width = (screen.width/12)*n
+    var ring = document.getElementsByClassName('ring')
+    for (var i=0;i<ring.length;i++){
+        //vertical center
+        var elementH = ring[i].clientHeight;
+        var padTop = (width-elementH)/2
+        ring[i].style.paddingTop = padTop + 'px'
+        //set row height
+        ring[i].style.height= width + 'px'
+    }
+
+    //horizontal center
+    var padN = (12-(n*3))/2;
+    var pad = (screen.width/12)*(padN)
+    document.getElementById('ringRow').style.marginLeft = pad + 'px'
+}
+
+function verticalCenter(){
+    var v = document.getElementsByClassName('vCenter')
+    
+    //find content height
+    var h = [];var i;
+    for (i=0;i<v.length;i++){
+        var height = v[i].offsetHeight;
+        h.push(height)
+    }
+    h.sort(function(a,b){return b-a})
+    var maxH = h[0]
+    
+    //set margin
+    var j;
+    for (j=0;j<v.length;j++){
+        var m = (maxH-v[j].offsetHeight)/2;
+        v[j].style.marginTop = m+"px"
+    }
+}
+
+function menuReact(){
+    var menu = document.getElementById('menu')
+    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80){
+        menu.style.boxShadow = '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'
+    } else {
+        menu.style.boxShadow = 'none'
+    }
+}
+
+var menuStatus = 0;
+function openMenu(){
+    
+    var h = document.getElementsByClassName('showOnClick')
+
+    //check menu status
+    if (menuStatus==0){
+        menuStatus=1;
+        for (var i=0;i<h.length;i++){
+            h[i].style.display ="inline"
+        }
+    } else {
+        menuStatus=0;
+        for (var i=0;i<h.length;i++){
+            h[i].style.display ="none"
+        }
+    }
+}
+
+function adjustHeight(id){
+    var children = document.getElementById(id).children;
+    //get max height
+    var height = []
+    
+    for (var i=0;i<children.length;i++){
+        height.push(children[i].clientHeight)
+    }
+    var maxHeight = Math.max.apply(null, height)
+    
+    for (var j=0;j<children.length;j++){
+        children[j].style.height = maxHeight + "px"
+    }
+}
+
+
+
+</script>
+</body>    
+</html>
+            
