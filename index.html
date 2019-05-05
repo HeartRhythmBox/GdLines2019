@@ -101,7 +101,7 @@ font-size: 1.5vmax;padding-left:0.9vmax;margin-top:-0.8vmax;display: none;opacit
 <body>
 
 <!--front page-->
-<div class="darkGrey block" style="height:100vh">
+<div id="top" class="darkGrey block" style="height:100vh">
     <div id="mainTitle" class="openSans w3-center" style="font-size: 6vmax;padding-top:12vh;color:white;font-weight: 300">
         EP-related Guidelines Review
     </div>
@@ -140,6 +140,10 @@ font-size: 1.5vmax;padding-left:0.9vmax;margin-top:-0.8vmax;display: none;opacit
     
 <div class="w3-bar-item w3-button w3-round-large menuItem w3-padding-small w3-animate-opacity" onclick="openMenu()">
     <i class="fas fa-bars" style="vertical-align: middle;"></i>
+</div>
+<div class="w3-bar-item w3-button w3-round-large menuItem w3-padding-small">
+    <a href="#top" style="text-decoration:none" class="showOnClick w3-animate-left">
+    Top</a>
 </div>
 <div class="w3-bar-item w3-button w3-round-large menuItem w3-padding-small">
     <a href="#brady" style="text-decoration:none" class="showOnClick w3-animate-left">
@@ -275,7 +279,7 @@ function menuReact(){
     if (document.body.scrollTop > h || document.documentElement.scrollTop > h){
         menu.style.display = 'block'
         scroll.style.display = 'block';
-        scrollOn();
+        if (screen.width>1000){scrollOn();}
     } else {
         menu.style.display = 'none';closeMenu();
         scroll.style.display = 'none';
