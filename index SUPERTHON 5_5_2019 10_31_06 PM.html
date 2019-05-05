@@ -316,9 +316,10 @@ function scrollOn(){
     scroll.onmouseout = function() {scrollLitUp('off')}
 
     
-    bigDot[0].onmouseover = function(){showTopic(0)};bigDot[0].onmouseout = function(){showTopic(0)}
-    bigDot[1].onmouseover = function(){showTopic(1)};bigDot[1].onmouseout = function(){showTopic(1)}
-    bigDot[2].onmouseover = function(){showTopic(2)};bigDot[2].onmouseout = function(){showTopic(2)}
+    bigDot[0].onmouseover = function(){showTopic(0)}
+    bigDot[0].onmouseout = function(){showTopic(0)}
+    bigDot[1].onclick = function(){showTopic(1)}
+    bigDot[2].onclick = function(){showTopic(2)}
     
     function showTopic(n) {
         var topicName = ['bradycardia','af','asymp arrhythmias']

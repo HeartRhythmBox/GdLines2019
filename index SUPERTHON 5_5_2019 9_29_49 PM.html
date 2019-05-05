@@ -57,21 +57,21 @@ vertical-align: middle;}
 .showOnClick {display: none}
 #scrollBar{position: fixed;left:2vw;top:20vh;font-family: 'Open Sans Condensed', sans-serif;
 color:#878787;font-size: 1.5vmax;height:0vh;width:3vw;display: none;z-index: 1;overflow: hidden;}
-.topicDisplay {position:fixed;font-family: 'Open Sans Condensed', sans-serif;color:#555;
-font-size: 1.5vmax;padding-left:0.9vmax;margin-top:-0.8vmax;display: none;opacity: 1}
+.topicName {position:fixed;font-family: 'Open Sans Condensed', sans-serif;
+color:#878787;font-size: 1.5vmax;}
 
 @keyframes expandBottom {
     0%{height: 0;opacity: 1.0}
     20%{height: 60vh;opacity: 1.0}
-    100%{height: 60vh;opacity: 0.3}
+    100%{height: 60vh;opacity: 0.4}
 }
 
 @keyframes fade {
     0% {opacity: 1.0}   
-    100% {opacity: 0.3}
+    100% {opacity: 0.4}
 }
 @keyframes unfade {
-    0% {opacity: 0.3}
+    0% {opacity: 0.4}
     100% {opacity: 1.0}
 }
 
@@ -160,12 +160,11 @@ font-size: 1.5vmax;padding-left:0.9vmax;margin-top:-0.8vmax;display: none;opacit
 
 <!--scroll bar-->
 <div id="scrollBar" class="noMobile">
-    <div class="bigDot" style="top:0vh"><span class="topicDisplay"></span>
-    </div>
+    <div class="bigDot" style="top:0vh"></div>
     <div class="line" style="top:0vh;height:18vh;"></div>
-    <div class="bigDot" style="top:0vh"><span class="topicDisplay"></span></div>
+    <div class="bigDot" style="top:0vh"></div>
     <div class="line" style="top:0vh;height:18vh;"></div>
-    <div class="bigDot" style="top:0vh"><span class="topicDisplay"></span></div>
+    <div class="bigDot" style="top:0vh"></div>
     <div class="line" style="top: 0vh;height:18vh"></div>
     <div style="top:0vh;width:0.8vmax;border-top:#878787 0.1vh solid"></div>
 </div>
@@ -271,6 +270,12 @@ function showInfo(boolean){
 function menuReact(){
     var menu = document.getElementById('menu');
     var scroll = document.getElementById('scrollBar')
+    scroll.onmouseover = function() {scroll.style.animation = 'unfade 1.5s linear 1';
+    scroll.style.opacity ='1.0'}
+    scroll.onmouseout = function() {
+        scroll.style.animation = 'fade 1.5s linear 1';
+        scroll.style.opacity ='0.4'
+    }
     var h = (screen.height)/1.25;
     if (document.body.scrollTop > h || document.documentElement.scrollTop > h){
         menu.style.display = 'block'
@@ -306,38 +311,23 @@ function closeMenu(){
 function scrollOn(){
     var bigDot = document.getElementsByClassName('bigDot')
     var scroll = document.getElementById('scrollBar')
-    var topicDisplay = document.getElementsByClassName('topicDisplay')
     scroll.style.animation = 'expandBottom 8s linear 1'
     scroll.style.height = '60vh';
     scroll.style.opacity = '0.4'
 
-    //mouse over
-    scroll.onmouseover = function() {scrollLitUp('on')}
-    scroll.onmouseout = function() {scrollLitUp('off')}
-
     
-    bigDot[0].onmouseover = function(){showTopic(0)};bigDot[0].onmouseout = function(){showTopic(0)}
-    bigDot[1].onmouseover = function(){showTopic(1)};bigDot[1].onmouseout = function(){showTopic(1)}
-    bigDot[2].onmouseover = function(){showTopic(2)};bigDot[2].onmouseout = function(){showTopic(2)}
+    bigDot[0].onclick = function(){showTopic(0)}
+    bigDot[1].onclick = function(){showTopic(1)}
+    bigDot[2].onclick = function(){showTopic(2)}
     
     function showTopic(n) {
         var topicName = ['bradycardia','af','asymp arrhythmias']
-        var topicDisplay = document.getElementsByClassName('topicDisplay')
-        if (topicDisplay[n].style.display=='inline'){
-            topicDisplay[n].style.display='none'
-        } else {
-        topicDisplay[n].style.display = "inline"
-        topicDisplay[n].innerHTML = topicName[n]}
-    }
-
-    function scrollLitUp(s){
-        if (s == "on"){
-            scroll.style.animation = 'unfade 1s linear 1';
-            scroll.style.opacity ='1.0'}
-        else {
-            scroll.style.animation = 'fade 1s linear 1';
-            scroll.style.opacity ='0.3'   
-        }
+        var bigDot = document.getElementsByClassName('bigDot')
+        var newSpan = document.createAttribute('span')
+        var text = document.createTextNode(topicName[n])
+        newSpan.appendChild(text)
+        bigDot[n].appendChild(newSpan)
+        alert('tt')
     }
 }
 
