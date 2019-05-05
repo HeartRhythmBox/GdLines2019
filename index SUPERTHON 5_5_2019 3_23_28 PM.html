@@ -65,7 +65,7 @@ color:#878787;font-size: 1.5vmax;height:0vh;width:3vw;display: none;z-index: 1;o
 }
 
 
-.bigDot {position: relative;
+.bigDot {position: relative;overflow: hidden;
   height: 0.8vmax;
   width: 0.8vmax;
   border: #878787 solid 0.1vmax;
@@ -74,7 +74,7 @@ color:#878787;font-size: 1.5vmax;height:0vh;width:3vw;display: none;z-index: 1;o
 }
 
 .line {position:relative;
-    margin-left:0.3vmax;width:1vw;
+    margin-left:0.3vmax;width:2vw;height:0.8vh;
     border-left:#878787 0.1vmax solid;
 }
 
@@ -151,10 +151,10 @@ color:#878787;font-size: 1.5vmax;height:0vh;width:3vw;display: none;z-index: 1;o
 <!--scroll bar-->
 <div id="scrollBar" class="noMobile">
     <div class="bigDot" style="top:0vh"></div>
-    <div class="line" style="top:0.5vh;height:19vh;"></div>
-    <div class="bigDot" style="top:0vh"></div>
-    <div class="line" style="top:0.5vh;height:19vh;"></div>
-    <div class="bigDot" style="top:0vh"></div>
+    <div class="line"></div>
+    <div class="bigDot" style="top:20vh"></div>
+    <div class="line"></div>
+    <div class="bigDot" style="top:40vh"></div>
 </div>
 
 <!--bradycardia-->
@@ -292,10 +292,10 @@ function scrollOn(){
     //var topic = document.getElementsByClassName('topic')
     //max H = 20vh
     //var maxH = ((screen.height)/100)*20
-    //for (var i=0;i<line.length;i++){
-       // line[i].style.top = 21*(i) + 'vh';
-       // line[i].style.height = 19 + 'vh'
-   // }
+    for (var i=0;i<line.length;i++){
+        line[i].style.top = 20*(i) + 'vh';
+        line[i].style.height = 10 + 'vh'
+    }
 }
 
 

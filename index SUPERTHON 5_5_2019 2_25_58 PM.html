@@ -55,37 +55,24 @@
 .menuItem {font-family: 'Open Sans Condensed', sans-serif;color:#878787;font-size: 1.5vmax;
 vertical-align: middle;}
 .showOnClick {display: none}
-#scrollBar{position: fixed;left:2vw;top:20vh;font-family: 'Open Sans Condensed', sans-serif;
-color:#878787;font-size: 1.5vmax;height:0vh;width:3vw;display: none;z-index: 1;overflow: hidden;}
+#scrollBar{position: fixed;left:2vw;top:30vh;font-family: 'Open Sans Condensed', sans-serif;
+color:#878787;font-size: 1.5vmax;height:40vh;width:3vw}
 
-@keyframes expandBottom {
-    0%{height: 0}
-    50%{height: 30vh}
-    100%{height: 60vh}
-}
-
-
-.bigDot {position: relative;
-  height: 0.8vmax;
-  width: 0.8vmax;
+.bigDot {margin-top:0.2vmax;
+  height: 0.75vmax;
+  width: 0.75vmax;
   border: #878787 solid 0.1vmax;
   border-radius: 50%;
   display: block;cursor: pointer;
 }
 
-.line {position:relative;
-    margin-left:0.3vmax;width:1vw;
-    border-left:#878787 0.1vmax solid;
-}
-
-.smallDot {margin-left:0.3vmax;margin-top:0.4vmax;
-  height: 0.2vmax;
-  width: 0.2vmax;
+.smallDot {margin-left:0.1vmax;margin-top:0.2vmax;
+  height: 0.4vmax;
+  width: 0.4vmax;
   border: #878787 solid 0.1vmax;
   border-radius: 50%;
   display: block;cursor: pointer;
 }
-
 
 </style>
 <body>
@@ -149,12 +136,10 @@ color:#878787;font-size: 1.5vmax;height:0vh;width:3vw;display: none;z-index: 1;o
 <div onclick="pointer()"><span class="pointer" style="display: none"></span> 
 
 <!--scroll bar-->
-<div id="scrollBar" class="noMobile">
-    <div class="bigDot" style="top:0vh"></div>
-    <div class="line" style="top:0.5vh;height:19vh;"></div>
-    <div class="bigDot" style="top:0vh"></div>
-    <div class="line" style="top:0.5vh;height:19vh;"></div>
-    <div class="bigDot" style="top:0vh"></div>
+<div id="scrollBar" class="w3-center w3-animate-bottom">
+    scroll<br>
+    <div class="bigDot w3-center"></div>
+    <div class="smallDot w3-center"></div>
 </div>
 
 <!--bradycardia-->
@@ -250,14 +235,12 @@ function showInfo(boolean){
 //menu
 function menuReact(){
     var menu = document.getElementById('menu');
-    var scroll = document.getElementById('scrollBar')
+    var item = document.getElementsByClassName('menuItem')
     var h = (screen.height)/1.25;
     if (document.body.scrollTop > h || document.documentElement.scrollTop > h){
         menu.style.display = 'block'
-        scroll.style.display = 'block';scrollOn();
     } else {
         menu.style.display = 'none';closeMenu();
-        scroll.style.display = 'none'
     }
 }
 
@@ -282,21 +265,6 @@ function closeMenu(){
         }
 }
 
-function scrollOn(){
-    var scroll = document.getElementById('scrollBar')
-    scroll.style.animation = 'expandBottom 2s 1'
-    scroll.style.height = '60vh';
-
-    //connecting line
-    var line = document.getElementsByClassName('line')
-    //var topic = document.getElementsByClassName('topic')
-    //max H = 20vh
-    //var maxH = ((screen.height)/100)*20
-    //for (var i=0;i<line.length;i++){
-       // line[i].style.top = 21*(i) + 'vh';
-       // line[i].style.height = 19 + 'vh'
-   // }
-}
 
 
 </script>
