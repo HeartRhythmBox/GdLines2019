@@ -24,21 +24,15 @@
 .darkGrey {background-color:#272727}
 .grey {color:#747474}
 .orange {color:#ff652f}
-.orangeBg {background-color:#ff652f}
 .yellow {color: #ffe400}
-.yellowBg {background-color:#ffe400}
 .green {color: #14a76c}
-.greenBg {background-color:#14a76c}
 
 .roboto {font-family: 'Roboto', sans-serif;}
 .openSans {font-family: 'Open Sans Condensed', sans-serif;}
 .ring {font-weight: 700;}
-.ring :hover {text-shadow: rgba(99, 99, 99, 0.6) 5px -5px 7px}
 
-.mobileOnly {display: none}
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     .noMobile {display:none}
-    .mobileOnly {display: block}
 }
 
 .pointer {
@@ -61,6 +55,16 @@
 .menuItem {font-family: 'Open Sans Condensed', sans-serif;color:#878787;font-size: 1.5vmax;
 vertical-align: middle;}
 .showOnClick {display: none}
+#scrollBar{position: fixed;left:2vw;top:20vh;font-family: 'Open Sans Condensed', sans-serif;
+color:#878787;font-size: 1.5vmax;height:0vh;width:3vw;display: none;z-index: 1;overflow: hidden;}
+.topicDisplay {position:fixed;font-family: 'Open Sans Condensed', sans-serif;color:#555;
+font-size: 1.5vmax;padding-left:0.9vmax;margin-top:-0.8vmax;display: none;opacity: 1}
+
+@keyframes expandBottom {
+    0%{height: 0;opacity: 1.0}
+    20%{height: 60vh;opacity: 1.0}
+    100%{height: 60vh;opacity: 0.3}
+}
 
 @keyframes fade {
     0% {opacity: 1.0}   
@@ -71,30 +75,39 @@ vertical-align: middle;}
     100% {opacity: 1.0}
 }
 
-.bigHeader {font-family: 'Open Sans Condensed', sans-serif;font-size: 7vmax;padding: 20vh 20vw;font-weight: 700;
-color:#272727;height:100vh;line-height: 120%}
-.smallHeader{font-size: 2.5vmax;padding: 2vmax;line-height: 100%;font-family: 'Open Sans Condensed', sans-serif;}
+.bigDot {position: relative;
+  height: 0.8vmax;
+  width: 0.8vmax;
+  border: #878787 solid 0.1vmax;
+  border-radius: 50%;
+  display: block;cursor: pointer;
+}
+
+.line {position:relative;
+    margin-left:0.3vmax;width:1vw;
+    border-left:#878787 0.1vmax solid;
+}
+
+.smallDot {margin-left:0.3vmax;margin-top:0.4vmax;
+  height: 0.2vmax;
+  width: 0.2vmax;
+  border: #878787 solid 0.1vmax;
+  border-radius: 50%;
+  display: block;cursor: pointer;
+}
+
+.bigHeader {font-family: 'Open Sans Condensed', sans-serif;font-size: 7vmax;padding: 0vh 20vw;font-weight: 700;
+color:#272727;height:100vh;vertical-align: middle;display: table-cell;line-height: 120%}
+.smallHeader{font-size: 2.5vmax;padding: 10vh 2vmax;vertical-align: top;line-height: 100%}
 
 @media only screen and (max-width: 600px) {
-   .bigHeader{padding: 10vmax;font-size:5vmax;height: fit-content}
+   .bigHeader{padding: 10vmax;font-size:5vmax}
 }
 
-#brady0 {display: none;}
-
-@keyframes expandLeft {
-    0% {width: 0}
-    100% {width: 100%}
-}
-
-.animateBg {animation: bgSize 1.5s 1 linear}
+#sL0 {display: none;}
 @keyframes bgSize {
     0% {background-size: 0%}
     100% {background-size: 100%}
-}
-
-.pad20Center {padding: 20vh 20vw}
-@media only screen and (max-width: 800px) {
-   .pad20Center{padding: 10vmax 1vmax}
 }
 
 
@@ -109,7 +122,7 @@ color:#272727;height:100vh;line-height: 120%}
     <div class="w3-cell-row w3-center" id="ringRow" style="padding-top:5vh;" >
         <div class="w3-col s4 m3 l2 w3-center openSans yellow ring" style="background:url(ringYellow.png);font-size:2vmax;background-size: 100%;background-repeat: no-repeat">
             <a href="#brady" style="text-decoration:none">
-            Bradycardia <br><span style="font-size:1.7vmax;">& conduction delay </span></a>
+            Bradycardia <br><span style="font-size:1.7vmax;">& conduction abnormalities </span></a>
         </div>
         <div class="w3-col s4 m3 l2 w3-center openSans orange ring" style="background:url(ringOrange.png);background-size: 100%;background-repeat: no-repeat;
         font-size:4vmax">
@@ -151,7 +164,7 @@ color:#272727;height:100vh;line-height: 120%}
     brady</a>
 </div>
 <div class="w3-bar-item menuItem w3-button w3-round-large w3-padding-small">
-    <a href="#af" style="text-decoration:none" class="showOnClick w3-animate-left">
+    <a href="#aF" style="text-decoration:none" class="showOnClick w3-animate-left">
     AF</a></div>
 <div class="w3-bar-item menuItem w3-button w3-round-large w3-padding-small">
     <a href="#asym" style="text-decoration:none" class="showOnClick w3-animate-left">
@@ -163,62 +176,46 @@ color:#272727;height:100vh;line-height: 120%}
 <!--start pointer-->
 <div onclick="pointer()"><span class="pointer" style="display: none"></span> 
 
-<!--bradycardia-->
-<div id='brady' class="block yellowBg" style="height: 100vh;">
-    <div class="w3-row pad20Center" style="margin-left:auto;margin-right:auto">
-        <a href="http://www.onlinejacc.org/guidelines/bradycardia" target="_blank" style="text-decoration:none">
-        <div class="w3-cell openSans w3-center w3-padding w3-cell-middle" style="background:url('ringSolidDark.png') center no-repeat;background-size: contain;
-        color: #ffe400;font-size:1.8vmax;line-height: 110%">
-            2018<br>ACC/AHA/HRS
-        </div>
-        <div class="w3-cell openSans w3-padding" style="font-size:5vmax;font-weight:700;color: #272727;
-        line-height: 110%">
-            Bradycardia and Cardiac Conduction Delay
-        </div></a>
+<!--scroll bar-->
+<div id="scrollBar" class="noMobile">
+    <div class="bigDot" style="top:0vh"><span class="topicDisplay"></span>
     </div>
+    <div class="line" style="top:0vh;height:18vh;"></div>
+    <div class="bigDot" style="top:0vh"><span class="topicDisplay"></span></div>
+    <div class="line" style="top:0vh;height:18vh;"></div>
+    <div class="bigDot" style="top:0vh"><span class="topicDisplay"></span></div>
+    <div class="line" style="top: 0vh;height:18vh"></div>
+    <div style="top:0vh;width:0.8vmax;border-top:#878787 0.1vh solid"></div>
 </div>
 
-<div class="block" style="background-color: white">
-    <div id='bigH0' class="bigHeader" onclick="splitScreen('bigH0','brady0','fChild0')">
-        No Cutpoint for Pause Duration to Justify a Pacemaker.
-    </div>
-    
-    <!--l10 m9 s12-->
-    <div id='brady0' class="w3-row w3-padding smallHeader" style="margin-top:2vmax">
-        <div id='fChild0' class="w3-col animateBg l2 m3 noMobile w3-animate-left" 
-        style="background:url('ringSolidYellow.png') no-repeat center;background-size: cover">
-            No Cutpoint for Pause Duration to Justify a Pacemaker.
-        </div>
-        <div class="w3-col s12 mobileOnly bigHeader">
-            No Cutpoint for Pause Duration to Justify a Pacemaker.
-        </div>
-        <div class="w3-col l10 m9 s12 w3-animate-right openSans w3-padding w3-animate-right">
-            <div class="noMobile" style="height:20vh"></div>
-            <div class="w3-container orangeBg" style="height:75vh">CONTENT</div>
-        </div> 
-        
+<!--bradycardia-->
+<div id='brady' class="block" style="height: 100vh;background-color:#ffe400">
+</div>
+
+<div class="block" style="height: 100vh;background-color: white">
+    <!--div id="bH0" class="bigHeader" onclick="sunrise('bH0','sL0','bg0',0)">
+        No Cutpoint for Pause Duration to Justify a Pacemaker.</div>
+    <div id="sL0" class="w3-row openSans">
+            <div id="bg0" class="w3-col s4 l2 smallHeader">
+                No Cutpoint for Pause Duration to Justify a Pacemaker.
+            </div>
+            <div class="w3-col s8 l10" style="height:100vh">
+                &nbsp;
+            </div>
+    </div-->
+    <div class="w3-row bigHeader">
+        <div class="w3-cell" style="background-image:'url('ringSolidYellow.png' ,no-repeat, center)">
+        No Cutpoint for Pause Duration to Justify a Pacemaker.</div>
     </div>
     
 </div>
 
 <!--AF-->
-<div id='af' class="block orangeBg" style="height: 100vh;margin-left:20vw">
-</div>
-
-<div class="block w3-white" style="height:100vh">
-    <div class="w3-row">
-        <div class="w3-col s4 yellowBg" style="border-right: 2vmax solid transparent;border-image: url('lineYellow.png') 40 round;
-        height: 100vh;border-image-outset: 0 1vmax 0 0">
-            content
-        </div>
-        <div class="w3-col s8 w3-center" style="height:100vh">
-        Content    
-    </div>
-    </div>
+<div id='#aF' class="block topic0" style="height: 100vh;background-color:#ff652f;margin-left:20vw">
 </div>
 
 <!--asym-->
-<div id='asym' class="block greenBg" style="height: 100vh;margin-left:20vw">
+<div id='#asymp' class="block topic0" style="height: 100vh;background-color:#14a76c;margin-left:20vw">
 </div>
 
 <!--end pointer-->
@@ -233,13 +230,13 @@ color:#272727;height:100vh;line-height: 120%}
 window.addEventListener("keydown", function(event) {
     event.preventDefault();
     if (event.keyCode===38) {
-    blockNav(-1);closeMenu()}
+    blockNav(-1)}
 })
 //down arrow
 window.addEventListener("keydown", function(event) {
     event.preventDefault();
     if (event.keyCode===40) {
-    blockNav(1);closeMenu()}
+    blockNav(1)}
 })
 
 window.addEventListener("keydown", function(event) {
@@ -310,13 +307,15 @@ function showInfo(boolean){
 //menu
 function menuReact(){
     var menu = document.getElementById('menu');
+    var scroll = document.getElementById('scrollBar')
     var h = (screen.height)/1.25;
     if (document.body.scrollTop > h || document.documentElement.scrollTop > h){
         menu.style.display = 'block'
-               
+        scroll.style.display = 'block';
+        if (screen.width>1000){scrollOn();}
     } else {
         menu.style.display = 'none';closeMenu();
-        
+        scroll.style.display = 'none';
     }
 }
 
@@ -329,7 +328,8 @@ function openMenu(){
         for (var i=0;i<h.length;i++){
             h[i].style.display ="inline"
         }
-    } else {closeMenu()}
+    } else {closeMenu()   
+    }
 }
 
 function closeMenu(){
@@ -340,24 +340,51 @@ function closeMenu(){
         }
 }
 
-function splitScreen(hide,show,child){
-    document.getElementById(hide).style.display = "none"
-    var show = document.getElementById(show)
-    show.style.display = 'block'
-    var child = document.getElementById(child)
+function scrollOn(){
+    var bigDot = document.getElementsByClassName('bigDot')
+    var scroll = document.getElementById('scrollBar')
+    var topicDisplay = document.getElementsByClassName('topicDisplay')
+    scroll.style.animation = 'expandBottom 8s linear 1'
+    scroll.style.height = '60vh';
+    scroll.style.opacity = '0.4'
 
-    //set min-height l2 m3
-    var s3 = 3*(screen.width/12);var s2 = 2*(screen.width/12)
+    //mouse over
+    scroll.onmouseover = function() {scrollLitUp('on')}
+    scroll.onmouseout = function() {scrollLitUp('off')}
+
     
-    if (screen.width>993) {
-        child.style.height = s2 + 'px';child.style.paddingTop = 0.2*s2 + 'px';
-        child.style.paddingLeft = '2vmax'
-    } else if (screen.width>600 && screen.width<993){
-        child.style.height = s3 + 'px';child.style.paddingTop = 0.3*s3 + 'px'
-        child.style.paddingLeft = '1.5vmax'
+    bigDot[0].onmouseover = function(){showTopic(0)};bigDot[0].onmouseout = function(){showTopic(0)}
+    bigDot[1].onmouseover = function(){showTopic(1)};bigDot[1].onmouseout = function(){showTopic(1)}
+    bigDot[2].onmouseover = function(){showTopic(2)};bigDot[2].onmouseout = function(){showTopic(2)}
+    
+    function showTopic(n) {
+        var topicName = ['bradycardia','af','asymp arrhythmias']
+        var topicDisplay = document.getElementsByClassName('topicDisplay')
+        if (topicDisplay[n].style.display=='inline'){
+            topicDisplay[n].style.display='none'
+        } else {
+        topicDisplay[n].style.display = "inline"
+        topicDisplay[n].innerHTML = topicName[n]}
     }
-   
-    
+
+    function scrollLitUp(s){
+        if (s == "on"){
+            scroll.style.animation = 'unfade 1s linear 1';
+            scroll.style.opacity ='1.0'}
+        else {
+            scroll.style.animation = 'fade 1s linear 1';
+            scroll.style.opacity ='0.3'   
+        }
+    }
+}
+
+function sunrise(hide,show,bg,topicNo){
+    var bgUrl = ['ringSolidYellow.png','ringSolidOrange.png','ringSolidGreen.png']
+    document.getElementById(hide).style.display = 'none'
+    document.getElementById(show).style.display = 'block'
+    document.getElementById(bg).style.background = 'url(' + bgUrl[topicNo] + ') no-repeat bottom right'
+    document.getElementById(bg).style.animation = 'bgSize 1s linear 1'
+    document.getElementById(bg).style.backgroundSize = 'cover'
 }
 
 </script>
