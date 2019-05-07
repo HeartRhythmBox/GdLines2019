@@ -41,7 +41,8 @@ function blockNav(n){
     }
     var nav = Number(n) + blockNo;
     if (nav>=0 && nav<block.length){
-    next(nav);}
+        next(nav);
+    }
     
 }
 
@@ -49,20 +50,7 @@ function blockNav(n){
 function next(n) {
     var block = document.getElementsByClassName("block");
     block[n].scrollIntoView({behavior:"smooth", block:"start"});
-    var i;
-    for (i=0;i<block.length;i++){
-        block[i].style.opacity = 0.1;
-    }   
-    block[n].style.opacity = 1;
-    if (n+1==block.length) {
-        showArray()
-    }
-    }
+}
 
-function unblur() {
-        var b = document.getElementsByClassName("block");
-        var i;
-        for (i=0;i<b.length;i++){
-            b[i].style.opacity = 1;
-        }
-    }
+
+

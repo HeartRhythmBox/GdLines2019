@@ -98,9 +98,11 @@ padding:1vmax}
 
 .ref{font-family: 'Open Sans', sans-serif;font-size:1vmax;color:#878787;font-weight:400}
 
-.shaggyPink {border-bottom: 0.5vmax solid transparent;border-image: url('underlinePink.png') 40 stretch;
-      border-top: 0.5vmax solid transparent;border-image: url('underlinePink.png') 40 stretch;
-      }
+.animateTop {animation: toBottom 1 1 linear}
+@keyframes toBottom {
+    0% {height:0}
+    100% {height:100vh}
+}
 
 </style>
 <body>
@@ -310,24 +312,20 @@ padding:1vmax}
 
 <!--SSS-->
 <div class="block">
-    <div class="w3-row" style="padding: 5vmax 1vmax 1vmax 1vmax">
-      <div class="openSans shaggyPink" style="font-size:3.2vmax;font-weight:700;color:#2a1b3d;
-      padding-left:3vmax;line-height: 120%;">    
-      In sinus node dysfunction, no established <span class="pink">PAUSE duration or minimum HR</span>
-        where permanent pacemaker is recommended.</div>   
-    </div>
     <div class="w3-row">
-        <div class="w3-cell">
-        <img src="media/pauseAthletes.png" style="width:100%">
-        <div class="ref">
-        <a href="https://academic.oup.com/europace/article/18/12/1873/2952220" target="_blank">
-        Europace 2016.
-        </a>
-        </div></div>
-        <div class="w3-cell openSans">
-            Pacemaker for SND improves symptoms NOT mortality.
-        </div>
-    
+    <div class="w3-col m4 l4 s12 w3-mobile w3-padding-large">
+      <div class="openSans" style="font-size:3.2vmax;font-weight:700;color:#2a1b3d;
+      padding-left:3vmax;line-height: 120%;
+      border-bottom: 0.5vmax solid transparent;border-image: url('underlinePink.png') 40 stretch;
+      border-top: 0.5vmax solid transparent;border-image: url('underlinePink.png') 40 stretch;
+      ">    
+      In sinus node dysfunction,<br> no established <br>
+        PAUSE duration or minimum HR
+        <br>where permanent pacemaker is recommended.</div>   
+    </div>
+    <div class="w3-col m8 l8 s12 w3-mobile pinkBg w3-padding-large" 
+    style="height: 80vh">
+          content
     </div>
     </div>
 </div>
