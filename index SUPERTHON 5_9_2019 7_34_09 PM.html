@@ -92,11 +92,10 @@ padding:1vmax}
 
 .block {height:100vh}
 .pad20Center {padding: 20vh 22vw}
-.pad10LR {padding: 2vmax 10vw}
 @media only screen and (max-width: 800px) {
    .pad20Center{padding: 10vmax 1.5vmax}
    .block {height:fit-content}
-   #show3,#show4 {display: block}
+   #show3 {display: block}
 }
 
 .ref{font-family: 'Open Sans', sans-serif;font-size:1vmax;color:#878787;font-weight:400}
@@ -104,20 +103,6 @@ padding:1vmax}
 .shaggyPink {border-bottom: 0.5vmax solid transparent;border-image: url('underlinePink.png') 40 stretch;
       border-top: 0.5vmax solid transparent;border-image: url('underlinePink.png') 40 stretch;
       }
-
-.cardH0, .cardH2 {font-size:2vmax;height: 30vh;overflow: hidden;color:#a4b3b6;}
-.cardH1 {font-size:3.5vmax;padding:2vmax;text-align: center;height: 30vh;animation: toLeft linear 1s 1;
-        overflow: hidden;}
-.cardH0 {transform: skewY(14deg) translateY(-2vmax)}
-.cardH2 {transform: skewY(-14deg) translateY(-2vmax)}
-.card0, .card1, .card2 {position: relative;text-align: left}
-
-.animateLeft10   {animation: toLeft10 linear 1s 1;}
-.animateLeft2 {animation: toLeft2 ease-in-out 1s 1}
-@keyframes toLeft10 {
-    0% {left:83vw}
-    100% {left:16vw}
-}
 
 </style>
 <body>
@@ -526,11 +511,11 @@ padding:1vmax}
             </span>
         </div>
         <div id='show4' class="w3-row w3-padding openSans fadeIn">
-            <div style="display:table-cell;vertical-align:middle">
+            <div class="w3-padding" style="display:table-cell;vertical-align:middle">
                     
-                <img src="media/crtHbp.png" style="width:100%;">
+                <img src="media/crtHbp.png" style="width:100%;max-height:90vh">
                 
-                <div style="font-size: 2.5vmax;font-weight:700;">
+                <div class="shaggyPink" style="font-size: 2.5vmax;font-weight:700">
                     Physiologic pacing (CRT or HBP) have shown a reduction in LVESV and 
                     improvement in LVEF compared with RV pacing.                
                 </div>
@@ -542,22 +527,11 @@ padding:1vmax}
         
             </div>
         </div>
-</div>
-
-<!--definition: SND, high GR AVB, AF with high Gr AVB, acc junc with va dissoc-->
-<div class="block">
-    <div class="w3-row openSans" style="margin-top: 8vmax">
-        <div class="w3-col s1 m2 l2 w3-card-4 w3-padding cardH0" style="overflow:hidden">
-            <div class="card0"></div>    
-        </div>
-        <div class="w3-col s10 m8 l8 w3-card-4 cardH1" style="overflow:hidden">
-            <div class="card1"></div>
-        </div>
-        <div class="w3-col s1 m2 l2 w3-card-4 w3-padding cardH2" style="overflow:hidden">
-            <div class="card2"></div>
-        </div>
     </div>
+
 </div>
+<!--eval risk for arrhythmia-->
+<!--definition: SND, high GR AVB, AF with high Gr AVB, acc junc with va dissoc-->
 
 <!--AF-->
 <div id='af' class="block blueBg" style="height: 100vh;">
@@ -584,7 +558,6 @@ padding:1vmax}
 
 <script src="block navigation.js" ></script>
 <script src="pointer.js" ></script>
-<script src="wheel.js" ></script>
 <script>
 
 //nav and pointer
@@ -621,7 +594,6 @@ window.onload = function(){
     ringRow(2)} 
     else if(screen.width>600) {ringRow(3)}
     else {ringRow(4)}
-    showTxtBlk(tStart,4);autoFwd()
    }
 
 function ringRow(n){

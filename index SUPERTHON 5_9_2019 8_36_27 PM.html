@@ -105,19 +105,44 @@ padding:1vmax}
       border-top: 0.5vmax solid transparent;border-image: url('underlinePink.png') 40 stretch;
       }
 
-.cardH0, .cardH2 {font-size:2vmax;height: 30vh;overflow: hidden;color:#a4b3b6;}
-.cardH1 {font-size:3.5vmax;padding:2vmax;text-align: center;height: 30vh;animation: toLeft linear 1s 1;
-        overflow: hidden;}
-.cardH0 {transform: skewY(14deg) translateY(-2vmax)}
-.cardH2 {transform: skewY(-14deg) translateY(-2vmax)}
-.card0, .card1, .card2 {position: relative;text-align: left}
+.cylinder {
+  display: flex; 
+  flex-direction:row; 
+  align-items: center;
+  justify-content: center;
+  }
 
-.animateLeft10   {animation: toLeft10 linear 1s 1;}
-.animateLeft2 {animation: toLeft2 ease-in-out 1s 1}
-@keyframes toLeft10 {
-    0% {left:83vw}
-    100% {left:16vw}
-}
+.cylinder>div {
+  margin: 0.5em;
+  text-align: center;
+      }
+.li0, .li1, .li2, .li3, .li4 {height: 15vh;width:70vw;}  
+.li0 { 
+      color:#D4D4D4;
+      transform: rotateX(60deg) skewX(-5deg);
+    }
+
+.li1 {
+      color:#646464;border-top: 1px solid #E3E3E3;
+      transform: rotateX(40deg) skewX(-4deg) translateX(-0.1875em);     
+    }
+
+.li2 {
+      color: #000000;font-weight: 700;
+      border-top: 1px solid #E3E3E3;
+      border-bottom: 1px solid #D5D5D5;display: table-cell;
+      transform: translateX(-0.25em);vertical-align: middle;
+  }
+
+.li3 {
+      color:#646464;
+      transform: rotateX(-40deg) skewX(4deg) translateX(-0.1875em);
+       }
+
+.li4 {
+      color: #D4D4D4; 
+      transform: rotateX(-60deg) skewX(5deg);
+      }
 
 </style>
 <body>
@@ -546,16 +571,14 @@ padding:1vmax}
 
 <!--definition: SND, high GR AVB, AF with high Gr AVB, acc junc with va dissoc-->
 <div class="block">
-    <div class="w3-row openSans" style="margin-top: 8vmax">
-        <div class="w3-col s1 m2 l2 w3-card-4 w3-padding cardH0" style="overflow:hidden">
-            <div class="card0"></div>    
-        </div>
-        <div class="w3-col s10 m8 l8 w3-card-4 cardH1" style="overflow:hidden">
-            <div class="card1"></div>
-        </div>
-        <div class="w3-col s1 m2 l2 w3-card-4 w3-padding cardH2" style="overflow:hidden">
-            <div class="card2"></div>
-        </div>
+    <div class="cylinder openSans pad10LR" style="font-size:2.5vmax;"> 
+                <div>
+                  <div class="li0"></div>
+                  <div class="li1"></div>
+                  <div class="li2"></div>
+                  <div class="li3"></div>
+                  <div class="li4"></div> 
+                </div> 
     </div>
 </div>
 
