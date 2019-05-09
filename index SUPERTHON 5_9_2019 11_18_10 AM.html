@@ -59,7 +59,7 @@
     }
 
 #menu {display: none}
-.menuItem {font-family: 'Open Sans Condensed', sans-serif;color:#555;font-size: 1.8vmax;
+.menuItem {font-family: 'Open Sans Condensed', sans-serif;color:#878787;font-size: 1.5vmax;
 vertical-align: middle;}
 .showOnClick {display: none}
 
@@ -142,7 +142,7 @@ padding:1vmax}
 </div>
 
 <!--menu-->
-<div class="w3-bar w3-top" id="menu">
+<div class="w3-bar w3-top w3-padding" id="menu">
     
 <div class="w3-bar-item w3-button w3-round-large menuItem w3-padding-small w3-animate-opacity" onclick="openMenu()">
     <i class="fas fa-bars" style="vertical-align: middle;"></i>
@@ -376,7 +376,7 @@ padding:1vmax}
     </div>
     
     <!--l10 m9 s12-->
-    <div id='brady2' class="w3-row w3-padding smallHeader fadeIn" style="padding-top:2vmax;">
+    <div id='brady2' class="w3-row w3-padding smallHeader" style="padding-top:2vmax;">
         <div id='fChild2' class="w3-col animateBg l2 m3 noMobile w3-center" 
         style="background:url('ringSolidPink.png') no-repeat center;background-size: cover;color:white">
         EP<br>Study</span>
@@ -387,25 +387,14 @@ padding:1vmax}
                 <li>
                     <div class="w3-row">
                         <div class="w3-cell w3-cell-middle">
-                            <img src="media/progressToCHB.png" style="max-width:100%;max-height: 80vh"></div>
+                            <img src="media/progressToCHB.png" style="max-width:100%;max-height: 50vh"></div>
                         <div class="w3-cell w3-padding w3-hoverable w3-hover-yellow w3-cell-middle">
-                        reasonable in Symptomatic conduction system disease with no demontrated AV block.
-                            <div class="ref">
-                                <a href="https://linkinghub.elsevier.com/retrieve/pii/0002-9149(82)90469-6">
-                                Am J Cardiol 1982.</a>
-                            </div>
-                        </div>
+                        Symptomatic conduction system disease with no demontrated AV block.</div>
                     </div>        
                 </li>
-                <li class="w3-hoverable w3-hover-orange">
-                    may consider in SND when other noninvasive tests were unrevealing or 
-                    undergoing EPS for other indications.
-                </li>
-                <li class="w3-hoverable w3-hover-orange">
-                    may consider in 2&deg; AVB to determine the level of block and to determine the
-                    benefit from pacemaker.
-                </li>
-                <li class="pinkBg" style="font-weight: 700;color:#2a1b3d">
+                <li>OSA leads to many CV consequences. </li>
+                <li>Treating OSA reduces arrhythmias and improves CV outcomes.</li>
+                <li class="pinkBg" style="font-weight: 700;color:white">
                     Yield of EP Study depends largely on the patient selection.
                 </li>
             </ul>
@@ -420,41 +409,24 @@ padding:1vmax}
             The role of EP Study is quite limited.
             </span>
             </div>
-            <div class="w3-col l10 m9 s12 openSans w3-padding fadeIn">
-                    <ul class="w3-ul" style="font-size: 2.8vmax;font-weight:400;border:#a4b3b6  solid 0.1vmax;
-                    padding: 0.5vmax 1vmax;color:white">
-                        <li>
-                            <div class="w3-row">
-                                <div class="w3-cell w3-mobile w3-cell-middle">
-                                    <img src="media/progressToCHB.png" style="max-width:100%;max-height: 80vh"></div>
-                                <div class="w3-cell w3-mobile w3-padding w3-hoverable w3-hover-yellow w3-cell-middle">
-                                reasonable in Symptomatic conduction system disease with no demontrated AV block.
-                                    <div class="ref">
-                                        <a href="https://linkinghub.elsevier.com/retrieve/pii/0002-9149(82)90469-6">
-                                        Am J Cardiol 1982.</a>
-                                    </div>
-                                </div>
-                            </div>        
-                        </li>
-                        <li class="w3-hoverable w3-hover-orange">
-                            may consider in SND when other noninvasive tests were unrevealing or 
-                            undergoing EPS for other indications.
-                        </li>
-                        <li class="w3-hoverable w3-hover-orange">
-                            may consider in 2&deg; AVB to determine the level of block and to determine the
-                            benefit from pacemaker.
-                        </li>
-                        <li class="pinkBg" style="font-weight: 700;color:#2a1b3d">
-                            Yield of EP Study depends largely on the patient selection.
-                        </li>
-                    </ul>
-                </div>
+            <div class="w3-col l10 m9 s12 w3-animate-right openSans w3-padding">
+                <div class="noMobile" style="height:15vh"></div>
+                <ul class="w3-ul" style="font-size: 2.5vmax;font-weight:400;border:#de91a2 solid 0.1vmax;
+                padding: 0.5vmax 1vmax">
+                    <li>Profound bradycardia can be found in Up to 1/3 of patients with OSA.</li>
+                    <li>OSA leads to many CV consequences. </li>
+                    <li>Treating OSA reduces arrhythmias and improves CV outcomes.</li>
+                    <li class="pinkBg" style="color:#a4b3b6;font-weight: 700">
+                        Screening and Treating OSA in patients with bradycardia and in those who already had
+                        pacemaker are recommended (class I & IIa).
+                    </li>
+                </ul>
+            </div>
     </div>
         
 </div>
 
 <!--post surgery-->
-
 <!--post MI-->
 <!--freq RV pacing-->
 <!--eval risk for arrhythmia-->
@@ -564,6 +536,7 @@ function menuReact(){
     var h = (screen.height)/1.25;
     if (document.body.scrollTop > h || document.documentElement.scrollTop > h){
         menu.style.display = 'block'
+               
     } else {
         menu.style.display = 'none';closeMenu();
         
@@ -573,17 +546,13 @@ function menuReact(){
 var menuStatus = 0;
 function openMenu(){
     var h = document.getElementsByClassName('showOnClick')
-    var menu = document.getElementById('menu');
     //check menu status
     if (menuStatus==0){
         menuStatus=1;
-        menu.style.backgroundColor = 'white';menu.style.opacity = "0.8"
         for (var i=0;i<h.length;i++){
             h[i].style.display ="inline"
         }
-    } else {menu.style.backgroundColor = 'transparent';menu.style.opacity = "1"
-        closeMenu()
-    }
+    } else {closeMenu()}
 }
 
 function closeMenu(){
