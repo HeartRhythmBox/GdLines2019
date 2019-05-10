@@ -82,7 +82,7 @@ padding:1vmax}
    .bigHeader{padding: 10vmax;font-size:5vmax;height: fit-content}
 }
 
-#brady0,#brady1,#brady2,#brady3,#show3,#show4,#show5,#show6,#show7 {display: none;}
+#brady0,#brady1,#brady2,#show3,#show4,#show5,#show6 {display: none;}
 
 .animateBg {animation: bgSize 1.5s 1 linear}
 @keyframes bgSize {
@@ -96,7 +96,7 @@ padding:1vmax}
 @media only screen and (max-width: 800px) {
    .pad20Center{padding: 10vmax 1.5vmax}
    .block {height:fit-content}
-   #show3,#show4,#show5,#show6,#show7 {display: block}
+   #show3,#show4,#show5,#show6 {display: block}
    #card {height:30vh}
 }
 
@@ -628,7 +628,7 @@ padding:1vmax}
     </div>
 
     <!--mobile-->
-    <div id='hide6' class="w3-row blueBg w3-center mobileOnly pad20Center openSans" style="font-size:6vmax;line-height: 110%" >
+    <div id='hide6' class="w3-row blueBg w3-center mobileOnly pad20Center" style="font-size:6vmax;line-height: 110%" >
             <span style="font-weight: 700;color:white">The
                 <span style="font-weight: 700;color:hotpink">SEXY</span> issue
             
@@ -654,11 +654,11 @@ padding:1vmax}
                     the absence of other factors. <br>
                     Female sex, however, accentuates risk of stroke among those with &ge;2 non-sex related stroke risk factors.
                 </li>
-                <li class="w3-green">
+                <li style="background-color:#f1c8cf" class="w3-hoverable w3-hover-green">
                     OAC is indicated in AF with an elevated CHA<sub>2</sub>DS<sub>2</sub>-VASc score of 
                     &ge;2 in men or &ge;3 in women.
                 </li>
-                <li class="w3-yellow">
+                <li style="background-color:#e7d8f7" class="w3-hoverable w3-hover-yellow">
                     Reasonable to omit OAC in CHA<sub>2</sub>DS<sub>2</sub>-VASc score of 0 in men and 1 in
                     women.
                 </li>
@@ -673,181 +673,59 @@ padding:1vmax}
     <div id='hide7' class="w3-row blueBg w3-center noMobile pad20Center" style="font-size:6vmax;line-height: 110%;height: 100vh;" 
     onclick="hideShowNewRow('hide7','show7');">
         <img src="media/48hour.gif" style="width:20%;padding:0.2vmax"><br>
-        <span style="font-weight:700;">48hr rule still stands.</span><br>
-        <span style="font-size:5vmax;color:#2A1B3D;text-align: center">...even with limited data...</span>        
+        <span style="font-weight:700;color: #555">48hr rule still stands.</span><br>
+        ...even without much data...        
         </div>
-    
+    </div>
 
     <!--mobile-->
-    <div id='hide7' class="w3-row blueBg w3-center mobileOnly pad20Center openSans" style="font-size:6vmax;line-height: 110%;">
-        <img src="media/48hour.gif" style="width:20%;padding:0.2vmax"><br>
-        <span style="font-weight:700;">48hr rule still stands.</span><br>
-        <span style="font-size:5vmax;color:#2A1B3D;text-align: center">...even with limited data...</span>        
+    <div id='hide6' class="w3-row blueBg w3-center mobileOnly pad20Center" style="font-size:6vmax;line-height: 110%" >
+            <span style="font-weight: 700;color:white">The
+                <span style="font-weight: 700;color:hotpink">SEXY</span> issue
+            
+            <div class="w3-row w3-center w3-white" style="font-size: 6vmax;font-weight: 700">
+            of the guideline
+        </div>
     </div>
-    
 
-    <div id='show7' class="w3-row w3-padding">
-        <div class="w3-cell w3-padding-small w3-mobile w3-cell-middle" style="background:radial-gradient(white,#f1f1f1)">
-            <img src="media/finCV.png" style="width:100%">
-            <div class="w3-row w3-padding openSans w3-border-top" style="line-height: 110%;font-size: 2.2vmax">
-                CHA<sub>2</sub>DS<sub>2</sub>-VASc score is a strong predictor of thromboembolic events in 
-                cardioversion of acute AF performed without anticoagulation.
-            </div>
+    <div id='show6' class="w3-row w3-padding">
+        
+        <div class="w3-cell w3-padding w3-mobile w3-cell-middle" style="background:radial-gradient(white,#f1f1f1)">
+            <img src="media/Sc.png" style="width:100%">
             <div class="ref">
-                <a href="https://www.ajconline.org/article/S0002-9149(16)30146-1/fulltext" target="_blank">
-                Am J Cardiol 2016.
+                <a href="https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.117.029081" target="_blank">
+                Circulation 2018.
                 </a>
             </div>
         </div>
-
-
-        <div class="w3-cell openSans w3-mobile w3-cell-top blueBg"  style="font-size:2.4vmax">
+        <div class="w3-cell openSans w3-mobile w3-cell-top blueBg"  style="font-size:2.5vmax">
             <ul class="w3-ul">
                 <li style="background-color:#dfe6fa">
-                    From Fin-CV registry, delay to cardioversion of >12 hours from symptom onset was
-                    associated with a greater risk of thromboembolic complications compared to cardioversion of 
-                    &lt; 12 hours (1.1% versus 0.3%).
-                    <div class="ref">
-                        <a href="https://jamanetwork.com/journals/jama/fullarticle/1895235" target="_blank">
-                        JAMA 2014.</a>
-                    </div>     
+                    Female sex alone does not convey increased risk in 
+                    the absence of other factors. <br>
+                    Female sex, however, accentuates risk of stroke among those with &ge;2 non-sex related stroke risk factors.
                 </li>
-                
-                <li class="w3-green">
-                    In AF/AFL of >48 hrs or unknown duration, anticoagulation is recommended regardless of CHA<sub>2</sub>DS<sub>2</sub>-VASc score.
+                <li style="background-color:#f1c8cf" class="w3-hoverable w3-hover-green">
+                    OAC is indicated in AF with an elevated CHA<sub>2</sub>DS<sub>2</sub>-VASc score of 
+                    &ge;2 in men or &ge;3 in women.
                 </li>
-                <li class="w3-yellow">
-                    In AF/AFL of &lt;48 hrs with CHA<sub>2</sub>DS<sub>2</sub>-VASc>2 in men and >3 in women, anticoagulation is reasonable.
-                </li>
-                <li class="w3-orange">
-                    In AF/AFL of &lt;48 hrs with CHA<sub>2</sub>DS<sub>2</sub>-VASc=0 in men and =1 in women, 
-                    anticoagulation vs no anticoagulation may be considered.
+                <li style="background-color:#e7d8f7" class="w3-hoverable w3-hover-yellow">
+                    Reasonable to omit OAC in CHA<sub>2</sub>DS<sub>2</sub>-VASc score of 0 in men and 1 in
+                    women.
                 </li>
             </ul>
         </div>
-            
-    </div>
-</div>
-
-<!--AF ACS-->
-<div class="block darkGrey">
-    <div id='bigH3' class="bigHeader noMobile" onclick="splitScreen('bigH3','brady3','fChild3')">
-        <span class="blue">
-        AF complicating ACS.</span>
-        <div style="font-size:2.5vmax;font-weight:400;line-height:120%" class="grey">
-        ...Triple or double therapy regimens are what you've already heard over the past several years...
-        </div>
-    </div>
     
-    <!--l10 m9 s12-->
-    <div id='brady3' class="w3-row w3-padding smallHeader fadeIn" style="padding-top:2vmax;">
-        <div id='fChild3' class="w3-col animateBg l2 m3 noMobile w3-center" 
-        style="background:url('ringSolidBlue.png') no-repeat center;background-size: cover;color:white">
-        AF &<br>ACS</span>
-        </div>
-        <div class="w3-col l10 m9 s12 openSans w3-padding fadeIn">
-            <div class="noMobile" style="height:25vh"></div>
-            <ul class="w3-ul" style="font-size: 2.8vmax;font-weight:400;border:#a4b3b6  solid 0.1vmax;
-            padding: 0.5vmax 1vmax;color:white">
-                <li class="w3-hoverable w3-hover-yellow">
-                    May choose clopidogrel over prasugrel in triple therapy regimen.
-                </li>
-                <li class="w3-hoverable w3-hover-yellow">
-                    Double therapy with clopidogrel or prasugrel + VKA is reasonable, as compared to triple therapy.
-                </li>
-                <li class="w3-hoverable w3-hover-yellow">
-                    Double therapy with clopidogrel or prasugrel + NOAC (Rivaroxaban 15mg OD or Dabigatran 150 mg BID) 
-                    is reasonable, as compared to triple therapy.
-                </li>
-                <li class="w3-hoverable w3-hover-orange">
-                    May switch from triple therapy to double therapy in 4-6 wks after PCI.    
-                </li>
-            </ul>
-        </div>
-        </div> 
-
-    <!--mobile-->
-    <div class="w3-row mobileOnly">
-        <div class="w3-col s12 mobileOnly bigHeader"
-        style="background:url('ringPink.png') no-repeat center;background-size: 90%">
-            <span class="pink">
-            The role of EP Study is quite limited.
-            </span>
-            </div>
-            <div class="w3-col l10 m9 s12 openSans w3-padding fadeIn">
-                    <ul class="w3-ul" style="font-size: 2.8vmax;font-weight:400;border:#a4b3b6  solid 0.1vmax;
-                    padding: 0.5vmax 1vmax;color:white">
-                        <li>
-                            <div class="w3-row">
-                                <div class="w3-cell w3-mobile w3-cell-middle">
-                                    <img src="media/progressToCHB.png" style="max-width:100%;max-height: 80vh"></div>
-                                <div class="w3-cell w3-mobile w3-padding w3-hoverable w3-hover-yellow w3-cell-middle">
-                                reasonable in Symptomatic conduction system disease with no demontrated AV block.
-                                    <div class="ref">
-                                        <a href="https://linkinghub.elsevier.com/retrieve/pii/0002-9149(82)90469-6">
-                                        Am J Cardiol 1982.</a>
-                                    </div>
-                                </div>
-                            </div>        
-                        </li>
-                        <li class="w3-hoverable w3-hover-orange">
-                            may consider in SND when other noninvasive tests were unrevealing or 
-                            undergoing EPS for other indications.
-                        </li>
-                        <li class="w3-hoverable w3-hover-orange">
-                            may consider in 2&deg; AVB to determine the level of block and to determine the
-                            benefit from pacemaker.
-                        </li>
-                        <li class="pinkBg" style="font-weight: 700;color:#2a1b3d">
-                            Yield of EP Study depends largely on the patient selection.
-                        </li>
-                    </ul>
-                </div>
     </div>
-        
 </div>
 
+<!--LAAO Abl-->
+<!--AF ACS-->
 <!--weight loss-->
-<div class="block darkGrey">
-    <div class="openSans w3-row blue" style="font-size:5vmax;font-weight:700;padding:2vmax;
-    line-height: 120%;">
-    <div style="padding-left:1vmax">Cut AF Loose</div>
-    <div style="padding-left:1vmax;border-bottom: solid black 0.1vmax">by Losing Some Weight.</div>
-    </div>
-    <div class="w3-row w3-padding w3-margin">
-        <div class="w3-cell w3-mobile w3-cell-middle">
-        <img src="media/weightLoss.png" style="width:100%;">
-            <div class="ref">
-                <a href="https://academic.oup.com/europace/article/20/12/1929/5038102" target="_blank">
-                REVERSE-AF. Europace 2018.
-                </a>
-            </div>
-        </div>
-        <div class="w3-cell w3-mobile w3-padding openSans w3-cell-middle" style="font-size:2.2vmax">
-            <ul class="w3-ul">
-            <li class="w3-green">
-            In AF + BMI>27, weight loss and risk factors modification is recommended.</li>
-            <li class="w3-text-white">
-                Risk factors = sleep apnea, hypertension, hyperlipidemia, glucose intolerance, and alcohol and tobacco
-                use 
-            </li>
-            </ul>
-        </div>
-    </div>
-</div>
+
 
 <!--asym-->
-<div id='asym' class="block purpleBg">
-    <div class="w3-row pad20Center" style="margin-left:auto;margin-right:auto">
-            <a href="https://academic.oup.com/europace/advance-article/doi/10.1093/europace/euz046/5382236" target="_blank" style="text-decoration:none">
-            <div class="w3-cell openSans w3-center w3-cell-middle" style="background:url('ringSolidDark.png') center no-repeat;background-size: contain;
-            font-size:1.8vmax;line-height: 110%;padding: 1.5vmax;color:white">
-                2019 EHRA Consensus
-            </div>
-            <div class="w3-cell openSans w3-padding" style="font-size:5vmax;font-weight:700;line-height: 110%;color:#2a1b3d">
-                Management of asymptomatic arrhythmias
-            </div></a>
-    </div>
+<div id='asym' class="block purpleBg" style="height: 100vh;">
 </div>
 
 <!--end pointer-->
@@ -989,7 +867,6 @@ function hideShowNewRow(hide,show) {
     document.getElementById(hide).style.display = 'none'
     document.getElementById(show).style.display = "block"
 }
-
 
 </script>
 </body>    
