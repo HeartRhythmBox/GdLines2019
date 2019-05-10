@@ -82,7 +82,7 @@ padding:1vmax}
    .bigHeader{padding: 10vmax;font-size:5vmax;height: fit-content}
 }
 
-#brady0,#brady1,#brady2,#show3,#show4 {display: none;}
+#brady0,#brady1,#brady2,#show3,#show4,#show5 {display: none;}
 
 .animateBg {animation: bgSize 1.5s 1 linear}
 @keyframes bgSize {
@@ -96,7 +96,8 @@ padding:1vmax}
 @media only screen and (max-width: 800px) {
    .pad20Center{padding: 10vmax 1.5vmax}
    .block {height:fit-content}
-   #show3,#show4 {display: block}
+   #show3,#show4,#show5 {display: block}
+   #card {height:30vh}
 }
 
 .ref{font-family: 'Open Sans', sans-serif;font-size:1vmax;color:#878787;font-weight:400}
@@ -105,19 +106,8 @@ padding:1vmax}
       border-top: 0.5vmax solid transparent;border-image: url('underlinePink.png') 40 stretch;
       }
 
-.cardH0, .cardH2 {font-size:2vmax;height: 30vh;overflow: hidden;color:#a4b3b6;}
-.cardH1 {font-size:3.5vmax;padding:2vmax;text-align: center;height: 30vh;animation: toLeft linear 1s 1;
-        overflow: hidden;}
-.cardH0 {transform: skewY(14deg) translateY(-2vmax)}
-.cardH2 {transform: skewY(-14deg) translateY(-2vmax)}
-.card0, .card1, .card2 {position: relative;text-align: left}
-
-.animateLeft10   {animation: toLeft10 linear 1s 1;}
-.animateLeft2 {animation: toLeft2 ease-in-out 1s 1}
-@keyframes toLeft10 {
-    0% {left:83vw}
-    100% {left:16vw}
-}
+#card {font-size:3vmax;height: 50vh;padding:2vmax;display: table-cell;vertical-align: middle;width:80vw;
+        box-shadow: rgba(200,200, 200, 0.6) 5px -5px 3px}
 
 </style>
 <body>
@@ -545,35 +535,93 @@ padding:1vmax}
 </div>
 
 <!--definition: SND, high GR AVB, AF with high Gr AVB, acc junc with va dissoc-->
-<div class="block">
-    <div class="w3-row openSans" style="margin-top: 8vmax">
-        <div class="w3-col s1 m2 l2 w3-card-4 w3-padding cardH0" style="overflow:hidden">
-            <div class="card0"></div>    
+<div class="block" style="background:radial-gradient(#f2f2f2,white)">
+    <div class="w3-row w3-padding openSans w3-right w3-margin" style="font-size:3vmax;font-weight: 700;color:#969696">
+        The rest of the guidelines that you already know...
+    </div>
+    <div class="w3-row openSans pad10LR" style="margin-top: 6vmax">
+        <div id='card'>
+
         </div>
-        <div class="w3-col s10 m8 l8 w3-card-4 cardH1" style="overflow:hidden">
-            <div class="card1"></div>
-        </div>
-        <div class="w3-col s1 m2 l2 w3-card-4 w3-padding cardH2" style="overflow:hidden">
-            <div class="card2"></div>
+        <div class="w3-center w3-row openSans noMobile" style="font-size:2vmax;padding:1.5vmax;margin-top: 3vmax">
+            <span id="bradyWheelLeft" class="w3-btn w3-round-large w3-padding-small">&leftarrow;</span>
+            <span id="bradyWheelCenter"></span>
+            <span id="bradyWheelRight" class="w3-btn w3-round-large w3-padding-small">&rightarrow;</span>
         </div>
     </div>
 </div>
 
-<!--AF-->
+<!--AF title-->
 <div id='af' class="block blueBg" style="height: 100vh;">
+    <div class="w3-row pad20Center" style="margin-left:auto;margin-right:auto">
+            <a href="http://www.onlinejacc.org/guidelines/atrial-fibrillation" target="_blank" style="text-decoration:none">
+            <div class="w3-cell openSans w3-center w3-cell-middle" style="background:url('ringSolidDark.png') center no-repeat;background-size: contain;
+            font-size:1.8vmax;line-height: 110%;padding: 1vmax;color:white">
+                2019<br>ACC/AHA/HRS
+            </div>
+            <div class="w3-cell openSans w3-padding" style="font-size:5vmax;font-weight:700;line-height: 110%;color:#2a1b3d">
+                Atrial Fibrillation Focused Update
+            </div></a>
+    </div>
+    
 </div>
 
-<div class="block w3-white" style="height:100vh">
-    <div class="w3-row">
-        <div class="w3-col s4" style="border-right: 2vmax solid transparent;border-image: url('lineYellow.png') 40 round;
-        height: 100vh;border-image-outset: 0 1vmax 0 0">
-            content
+<!--nonValvular-->
+<div class="block openSans">
+    <div id='hide5' class="w3-row blueBg w3-center noMobile pad20Center" style="font-size:6vmax;line-height: 110%;height: 100vh;" 
+    onclick="hideShowNewRow('hide5','show5');">
+            <span style="font-weight: 700;color:white">Non-valvular AF</span> is now
+        
+        <div class="w3-row w3-center w3-white" style="font-size: 6vmax;font-weight: 700">
+        an outdated term.
         </div>
-        <div class="w3-col s8 w3-center" style="height:100vh">
-        Content    
     </div>
+
+    <!--mobile-->
+    <div id='hide5' class="w3-row blueBg w3-center mobileOnly pad20Center" style="font-size:6vmax;line-height: 110%" >
+            <span style="font-weight: 700;color:white">Non-valvular AF</span> is now
+        
+        <div class="w3-row w3-center w3-white" style="font-size: 6vmax;font-weight: 700">
+        an outdated term.
+        </div>
+    </div>
+
+    <div id='show5' class="w3-row w3-padding">
+        
+        <div class="w3-cell w3-padding w3-mobile w3-cell-middle" style="background:radial-gradient(white,#f1f1f1)">
+            <img src="media/VHDNoacs.jpg" style="width:100%">
+            <div class="ref">
+                <a href="http://www.onlinejacc.org/content/69/11/1363" target="_blank">
+                JACC 2017.
+                </a>
+            </div>
+        </div>
+        <div class="w3-cell openSans w3-mobile w3-cell-top"  style="font-size:2.5vmax">
+            <ul class="w3-ul">
+                <li style="background-color:#dfe6fa">
+                    The new term = "MARM-AF", “Mechanical And Rheumatic Mitral valvular AF"
+                    is now being proposed.
+                </li>
+                <li style="background-color:#cfdaf7">
+                    NOACs trials consistently excluded those with moderate to severe rheumatic MS and
+                    mechanical prosthetic valve.
+                </li>
+                <li style="background-color:#e7d8f7">
+                    High-dose NOACs provide overall efficacy and safety similar in AF patients with or without 
+                    VHD (that were not 'MARM').
+                </li>
+            </ul>
+        </div>
+    
     </div>
 </div>
+
+<!--Sex-->
+<!--48hrs-->
+<!--LAAO Abl-->
+<!--AF ACS-->
+<!--weight loss-->
+
 
 <!--asym-->
 <div id='asym' class="block purpleBg" style="height: 100vh;">
@@ -621,7 +669,7 @@ window.onload = function(){
     ringRow(2)} 
     else if(screen.width>600) {ringRow(3)}
     else {ringRow(4)}
-    showTxtBlk(tStart,4);autoFwd()
+    showTxtBlk();autoFwd()
    }
 
 function ringRow(n){
