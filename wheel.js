@@ -10,7 +10,7 @@ var allText = ["In symptomatic SND, pacemaker improves symptoms; <b>NOT</b> mort
                 "1AVB or Mobitz I with exertional symptoms, consider <b>EST</b> to determine the potential role of pacemaker.",
                 "Acquired & irreversible Mobitz II, high grade AV block, or 3AVB: pacemaker is indicated <b>regardless</b> of symptoms.",
                 "SND + AVB: <b>Dual chamber</b> is preferred over single chamber pacemaker.",
-                "New LBBB post TAVR: careful survelliance for bradycardia is reasonable",
+                "New LBBB post TAVR: careful survelliance for bradycardia is reasonable.",
                 "<b>PPM in congenital CHB:</b><br> symptomatic bradycardia/wide QRS escape rhythm/mean daytime HR<50 bpm/complex ventricular ectopy/ventricular dysfunction.",
                 "Evaluate risk for <b>ventricular arrhythmias</b> and need for ICD before PPM implantation."
               ];
