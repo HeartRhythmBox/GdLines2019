@@ -203,8 +203,10 @@ padding:1vmax}
 
 <!--Osa-->
 <div class="block pinkBg">
-    <div id='bigH0' class="bigHeader noMobile" onclick="splitScreen('bigH0','brady0','fChild0')">
+    <div id='bigH0' class="bigHeader noMobile" onclick="splitScreen('bigH0','brady0','fChild0')" style="cursor:pointer" title="click me">
         Look for Sleep Apnea in patients with bradycardia
+        <div style="font-size:2vmax;font-weight:400;line-height:120%;color:#878787">
+            click for more...</div>
     </div>
     
     <!--l10 m9 s12-->
@@ -255,9 +257,11 @@ padding:1vmax}
 </div>
 
 <!--LBBB-->
-<div class="block w3-white" >
-    <div id='bigH1' class="bigHeader noMobile" onclick="splitScreen('bigH1','brady1','fChild1')">
+<div class="block w3-white">
+    <div id='bigH1' class="bigHeader noMobile" onclick="splitScreen('bigH1','brady1','fChild1')" style="cursor:pointer" title="click me">
         Get an echo <span style="font-weight:400">(at least)</span> <br>for a new LBBB.
+        <div style="font-size:2vmax;font-weight:400;line-height:120%;color:#878787">
+            click for more...</div>
     </div>
             
     <!--l10 m9 s12-->
@@ -386,11 +390,13 @@ padding:1vmax}
 
 <!--EP study-->
 <div class="block darkGrey">
-    <div id='bigH2' class="bigHeader noMobile" onclick="splitScreen('bigH2','brady2','fChild2')">
+    <div id='bigH2' class="bigHeader noMobile" onclick="splitScreen('bigH2','brady2','fChild2')"  style="cursor:pointer" title="click me">
         <span class="pink">
         The role of EP Study is quite limited.</span>
         <div style="font-size:2.5vmax;font-weight:400;line-height:120%" class="grey">
-        (There's no class I indication...to say the least.)
+        (There's no class I indication...to say the least.)<br>
+        <span style="font-size:1.8vmax">
+        ...click for more...</span>
         </div>
     </div>
     
@@ -475,12 +481,16 @@ padding:1vmax}
 <!--post MI or surgery-->
 <div class="block w3-row w3-padding">
     <!--nonMobile-->
-    <div id='hide3' class="w3-cell w3-cell-middle openSans pad20Center noMobile" 
-    style="font-size:4vmax;font-weight:700;line-height: 110%" onclick="hideShowNewRow('hide3','show3')">
+    <div id='hide3' class="w3-cell w3-cell-middle openSans noMobile" 
+    style="font-size:4vmax;font-weight:700;line-height: 110%;cursor:pointer;padding: 5vmax 10vmax" title="click me" 
+    onclick="hideShowNewRow('hide3','show3')">
         Pacemaker is recommended for new SND or AV block with persistent symptoms that do not RESOLVE after
         the surgery or MI.<br>
         ...<br>
         <span style="color:#555">but how long should we wait for?</span>
+        <div style="font-size:2vmax;font-weight:400;line-height:120%" class="grey">
+        click for more...
+        </div>
     </div>
     <div id='show3' class="w3-row w3-padding openSans shaggyPink fadeIn">
         <div class="w3-cell w3-cell-middle w3-mobile w3-padding">
@@ -520,13 +530,17 @@ padding:1vmax}
 <!--freq RV pacing-->
 <div class="block w3-row w3-padding pinkBg">
         <!--nonMobile-->
-        <div id='hide4' class="w3-cell w3-cell-middle openSans pad20Center noMobile" 
-        style="font-size:4vmax;font-weight:700;line-height: 110%" onclick="hideShowNewRow('hide4','show4')">
+        <div id='hide4' class="w3-cell w3-cell-middle openSans noMobile" 
+        style="font-size:4vmax;font-weight:700;line-height: 110%;cursor:pointer;padding: 5vmax 10vmax" title="click me" 
+        onclick="hideShowNewRow('hide4','show4')">
             'PHYSIOLOGIC' pacing is preferred in those with LVEF 36%-50% and those 
             whom frequent RV pacing (>40%) is expected.<br>
             ...<br>
             <span style="color:#555">Physiologic pacing = CRT or His bundle pacing
             </span>
+            <div style="font-size:2vmax;font-weight:400;line-height:120%;color:#878787">
+            click for more...
+            </div>
         </div>
         <div id='show4' class="w3-row w3-padding openSans fadeIn">
             <div style="display:table-cell;vertical-align:middle">
@@ -582,13 +596,16 @@ padding:1vmax}
 
 <!--nonValvular-->
 <div class="block openSans" style="border:#9bb7ee solid 0.5vmax">
-    <div id='hide5' class="w3-row blueBg w3-center noMobile pad20Center" style="font-size:6vmax;line-height: 110%;height: 100vh;" 
+    <div id='hide5' class="w3-row blueBg w3-center noMobile pad20Center" 
+    style="font-size:6vmax;line-height: 110%;height: 100vh;cursor:pointer" title="click me"  
     onclick="hideShowNewRow('hide5','show5');">
             <span style="font-weight: 700;color:white">Non-valvular AF</span> is now
         
         <div class="w3-row w3-center w3-white" style="font-size: 6vmax;font-weight: 700">
         an outdated term.
         </div>
+        <div style="font-size:2vmax;font-weight:400;line-height:120%;color:#555">
+        click for more...</div>
     </div>
 
     <!--mobile-->
@@ -632,13 +649,16 @@ padding:1vmax}
 
 <!--Sex-->
 <div class="block openSans" style="border:#9bb7ee solid 0.5vmax">
-    <div id='hide6' class="w3-row blueBg w3-center noMobile pad20Center" style="font-size:6vmax;line-height: 110%;height: 100vh;" 
+    <div id='hide6' class="w3-row blueBg w3-center noMobile pad20Center" 
+    style="font-size:6vmax;line-height: 110%;height: 100vh;cursor:pointer" title="click me" 
     onclick="hideShowNewRow('hide6','show6');">The
             <span style="font-weight: 700;color:hotpink">SEXY</span> issue
         
         <div class="w3-row w3-center w3-white" style="font-size: 6vmax;font-weight: 700">
         of the guideline
         </div>
+        <div style="font-size:2vmax;font-weight:400;line-height:140%;color:#555">
+        click for more...</div>
     </div>
 
     <!--mobile-->
@@ -684,12 +704,17 @@ padding:1vmax}
 
 <!--48hrs-->
 <div class="block openSans" style="border:#9bb7ee solid 0.5vmax">
-    <div id='hide7' class="w3-row blueBg w3-center noMobile pad20Center" style="font-size:6vmax;line-height: 110%;height: 100vh;" 
+    <div id='hide7' class="w3-row blueBg w3-center noMobile pad20Center" 
+    style="font-size:6vmax;line-height: 110%;height: 100vh;cursor:pointer" title="click me" 
     onclick="hideShowNewRow('hide7','show7');">
         <img src="media/48hour.gif" style="width:20%;padding:0.2vmax"><br>
         <span style="font-weight:700;">48hr rule still stands.</span><br>
         <span style="font-size:5vmax;color:#2A1B3D;text-align: center">...even with limited data...</span>        
-        </div>
+        <div style="font-size:2vmax;font-weight:400;line-height:120%;color:#555">
+        click for more...
+        </div>    
+    
+    </div>
     
 
     <!--mobile-->
@@ -745,12 +770,17 @@ padding:1vmax}
 
 <!--AF ACS-->
 <div class="block darkGrey">
-    <div id='bigH3' class="bigHeader noMobile" onclick="splitScreen('bigH3','brady3','fChild3')">
+    <div id='bigH3' class="bigHeader noMobile" onclick="splitScreen('bigH3','brady3','fChild3')"
+        style="cursor: pointer" title="click me">
         <span class="blue">
         AF complicating ACS.</span>
         <div style="font-size:2.5vmax;font-weight:400;line-height:120%" class="grey">
         ...Triple or double therapy regimens are what you've already heard over the past several years...
         </div>
+        <div style="font-size:1.8vmax;font-weight:400;line-height:160%;color:#878787">
+        (click for more...)
+        </div>
+
     </div>
     
     <!--l10 m9 s12-->
